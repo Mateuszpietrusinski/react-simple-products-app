@@ -16,7 +16,7 @@ export const ProductPage = ({id, onLocationChange}: { id: string, onLocationChan
     if (status.loading === 'ERROR') return (
         <ProductDetailsLayout>
             <div className="mb-4">
-                <button onClick={() => onLocationChange()} className="font-bold"> &#8592; Back to listing</button>
+                <button onClick={() => { onLocationChange(); }} className="font-bold"> &#8592; Back to listing</button>
             </div>
             <ErrorAlert>
                 An error occurred during fetching the data. Check developer console for more data.
@@ -27,7 +27,7 @@ export const ProductPage = ({id, onLocationChange}: { id: string, onLocationChan
     if (data === null) return (
         <ProductDetailsLayout>
             <div className="mb-4">
-                <button onClick={() => onLocationChange()} className="font-bold"> &#8592; Back to listing</button>
+                <button onClick={() => { onLocationChange(); }} className="font-bold"> &#8592; Back to listing</button>
             </div>
             <ErrorAlert>
                 No product found
@@ -39,7 +39,7 @@ export const ProductPage = ({id, onLocationChange}: { id: string, onLocationChan
     return (
         <ProductDetailsLayout>
             <div className="mb-4">
-            <button onClick={() => onLocationChange()} className="font-bold"> &#8592; Back to listing</button>
+            <button onClick={() => { onLocationChange(); }} className="font-bold"> &#8592; Back to listing</button>
                 </div>
                 <div className="md:flex items-center -mx-10">
                     <div className="w-full md:w-1/2 px-10 mb-10 md:mb-0">

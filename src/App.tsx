@@ -10,7 +10,7 @@ const App = () => {
 
     const changeLocation = useCallback(
         (page: string, params: object) => {
-            setLocation({page, params: params || {}});
+            setLocation({page, params: params});
         },
         [setLocation]
     );
@@ -22,7 +22,7 @@ const App = () => {
                 <ProductListPage changeLocation={changeLocation}/>
             )}
             {location.page === "view" && location.params.id &&
-                <ProductPage id={location.params.id} onLocationChange={() => changeLocation("list", () => ({}))}/>}
+                <ProductPage id={location.params.id} onLocationChange={() => { changeLocation("list", () => ({})); }}/>}
         </div>
     );
 };

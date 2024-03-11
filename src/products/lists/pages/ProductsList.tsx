@@ -57,7 +57,7 @@ export const ProductListPage = ({changeLocation}: { changeLocation: (page: strin
                             className="bg-white shadow-md rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
                             <a
                                 className="link cursor-pointer"
-                                onClick={() => changeLocation("view", {id: product.id})}
+                                onClick={() => { changeLocation("view", {id: product.id}); }}
                             >
                                 <img className="rounded-t-lg p-5" src={product.thumbnail} alt="product image"/>
                             </a>
@@ -68,7 +68,7 @@ export const ProductListPage = ({changeLocation}: { changeLocation: (page: strin
                             <div className="px-5 pb-5">
                                 <a
                                     className="link cursor-pointer"
-                                    onClick={() => changeLocation("view", {id: product.id})}
+                                    onClick={() => { changeLocation("view", {id: product.id}); }}
                                 >
                                     <h3 className="text-gray-900 font-semibold text-xl tracking-tight dark:text-white">Apple
                                         {product.description}</h3>
@@ -82,14 +82,14 @@ export const ProductListPage = ({changeLocation}: { changeLocation: (page: strin
             <div className="inline-flex rounded-md shadow-sm justify-center w-full my-10" role="group">
                 {skip > 0 ? <button type="button"
                         onClick={() =>
-                            handleChange( skip !== 0 ? skip - itemsPerPage : 0)
+                            { handleChange( skip !== 0 ? skip - itemsPerPage : 0); }
                         }
                         className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent border border-gray-900 rounded-s-lg hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
                     Previous
                 </button>: <></>}
                 {data.total > data.skip + data.limit ? <button type="button"
                         className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-transparent border border-gray-900 rounded-e-lg hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"
-                        onClick={() => handleChange(skip + itemsPerPage)}>
+                        onClick={() => { handleChange(skip + itemsPerPage); }}>
                     Next
                 </button> : <></>}
             </div>

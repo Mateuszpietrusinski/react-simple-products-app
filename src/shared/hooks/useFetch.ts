@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 type LOADING_STATES = 'IDLE' | 'LOADING' | 'SUCCESS' | 'ERROR';
 type Status = {
     loading: LOADING_STATES;
-    error: null | object;
+    error: null | Error;
 }
 interface IUseFetchResponse<ApiResponseData> {
     data: ApiResponseData | null;
@@ -25,7 +25,7 @@ export const useFetch = <ResponseData>(url: string): IUseFetchResponse<ResponseD
         let ignoreRequest = false;
         const fetchData = async (): Promise<ResponseData> => {
             const result = await fetch(url);
-            return result.json();
+            return await result.json() as ResponseData;
         };
 
         setStatus({
@@ -40,19 +40,17 @@ export const useFetch = <ResponseData>(url: string): IUseFetchResponse<ResponseD
                     setStatus({
                         loading: 'SUCCESS',
                         error: null
-                    });
+                    } as Status);
                 }
             })
-            .catch((error) => {
+            .catch((error: Error) => {
                     if (!ignoreRequest) {
-                        console.error({
+                        const statusError : Status = {
                             loading: 'ERROR',
                             error: error
-                        })
-                        setStatus({
-                            loading: 'ERROR',
-                            error: error
-                        });
+                        }
+                        console.error(statusError)
+                        setStatus(statusError);
                         setData(null)
                     }
                 }
