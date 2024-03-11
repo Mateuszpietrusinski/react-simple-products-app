@@ -17,6 +17,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'complexity': ['error', 10],
   },
   parserOptions: {
     ecmaVersion: 'latest',
