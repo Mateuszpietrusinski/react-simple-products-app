@@ -1,6 +1,6 @@
 ### Products listing app
 
-This is a simple app that allows you to list products from [Dummy JSON API](https://dummyjson.com/products). It is built using React. 
+This is a simple app that allows you to list products from [Dummy JSON API](https://dummyjson.com/docs/products). It is built using React. 
 
 ## Demo
 You can see the live demo [here](https://react-simple-products-app.vercel.app/)
