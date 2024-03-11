@@ -19,8 +19,8 @@ This is a simple app that allows you to list products from [Dummy JSON API](http
 
 ### Listing page
 This app is using Tailwind CSS for styling. The listing page displays 12 products per page. You can navigate between pages using the previous and next button.
-![alt text](https://github.com/Mateuszpietrusinski/react-simple-products-app/blob/main/assets/list_view.png)
+![alt text](https://github.com/Mateuszpietrusinski/react-simple-products-app/blob/main/src/assets/list_view.png)
 
 ### Product details page
 You can click on the product to see the details. The details page displays the product name, description, and price.
-![alt text](https://github.com/Mateuszpietrusinski/react-simple-products-app/blob/main/assets/details_view.png)
+![alt text](https://github.com/Mateuszpietrusinski/react-simple-products-app/blob/main/src/assets/details_view.png)
