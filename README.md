@@ -4,7 +4,7 @@ This is a simple app that allows you to list products from [Dummy JSON API](http
 
 ## Demo
 You can see the live demo [here](https://react-simple-products-app.vercel.app/)
-
+![alt text](https://github.com/Mateuszpietrusinski/react-simple-products-app/blob/main/src/assets/list_view.png)
 ## Stack
 - React
 - Tailwind CSS
