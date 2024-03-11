@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
+### Products listing app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple app that allows you to list products from [Dummy JSON API](https://dummyjson.com/products). It is built using React. 
 
-Currently, two official plugins are available:
+## Stack
+- React
+- Tailwind CSS
+- Vitest
+- Eslint
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+1. Clone the repository
+2. Run `npm install` to install the dependencies
+3. Run `npm run dev` to start the app in development mode
+4. Open `http://localhost:5173/` in your browser
+5. Enjoy!
 
-## Expanding the ESLint configuration
+## Design
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Listing page
+This app is using Tailwind CSS for styling. The listing page displays 12 products per page. You can navigate between pages using the previous and next button.
+![alt text](https://github.com/Mateuszpietrusinski/react-simple-products-app/blob/main/assets/list_view.png)
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Product details page
+You can click on the product to see the details. The details page displays the product name, description, and price.
+![alt text](https://github.com/Mateuszpietrusinski/react-simple-products-app/blob/main/assets/details_view.png)
