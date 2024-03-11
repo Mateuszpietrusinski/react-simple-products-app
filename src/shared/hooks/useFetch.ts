@@ -1,13 +1,13 @@
 import {useEffect, useState} from "react";
 
 type LOADING_STATES = 'IDLE' | 'LOADING' | 'SUCCESS' | 'ERROR';
-type Status = {
+interface IStatus {
     loading: LOADING_STATES;
     error: null | Error;
 }
 interface IUseFetchResponse<ApiResponseData> {
     data: ApiResponseData | null;
-    status: Status
+    status: IStatus
 }
 
 export const useFetch = <ResponseData>(url: string): IUseFetchResponse<ResponseData> => {
@@ -15,7 +15,7 @@ export const useFetch = <ResponseData>(url: string): IUseFetchResponse<ResponseD
     const [data, setData] =
         useState<ResponseData | null>(null);
 
-    const [status, setStatus] = useState<Status>({
+    const [status, setStatus] = useState<IStatus>({
         loading: 'IDLE',
         error: null
     });
@@ -40,12 +40,12 @@ export const useFetch = <ResponseData>(url: string): IUseFetchResponse<ResponseD
                     setStatus({
                         loading: 'SUCCESS',
                         error: null
-                    } as Status);
+                    } as IStatus);
                 }
             })
             .catch((error: Error) => {
                     if (!ignoreRequest) {
-                        const statusError : Status = {
+                        const statusError : IStatus = {
                             loading: 'ERROR',
                             error: error
                         }
