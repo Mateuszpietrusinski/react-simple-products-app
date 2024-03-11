@@ -1,5 +1,3 @@
-import "./index.css";
-
 import {useState, useCallback} from "react";
 import {ProductPage} from "./products/details/pages/Product.tsx";
 import {ProductListPage} from "./products/lists/pages/ProductsList.tsx";
