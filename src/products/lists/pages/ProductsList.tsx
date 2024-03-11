@@ -70,11 +70,10 @@ export const ProductListPage = ({changeLocation}: { changeLocation: (page: strin
                                     className="link cursor-pointer"
                                     onClick={() => { changeLocation("view", {id: product.id}); }}
                                 >
-                                    <h3 className="text-gray-900 font-semibold text-xl tracking-tight dark:text-white">Apple
-                                        {product.description}</h3>
+                                    <h3 className="text-gray-900 font-semibold text-xl tracking-tight dark:text-white">
+                                        {product.title}</h3>
                                 </a>
                             </div>
-
                         </div>
                     </li>
                 ))}
