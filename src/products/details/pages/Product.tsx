@@ -58,11 +58,6 @@ export const ProductPage = ({id, onLocationChange}: { id: string, onLocationChan
                                 <span className="font-bold text-5xl leading-none align-baseline">{data.price}</span>
                                 <span className="text-2xl leading-none align-baseline">.00</span>
                             </div>
-                            <div className="inline-block align-bottom">
-                                <button className="bg-blue-600 text-white rounded-full px-10 py-2 font-semibold">BUY
-                                    NOW
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
