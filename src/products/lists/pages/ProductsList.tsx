@@ -12,7 +12,7 @@ const PRODUCT_LISTING_SKIP_STORAGE_KEY = "PRODUCT_LISTING_SKIP"
 export const ProductListPage = ({changeLocation}: { changeLocation: (page: string, params: object) => void }) => {
     const savedSkip = storageProvider.getItem(PRODUCT_LISTING_SKIP_STORAGE_KEY);
     const [skip, setSkip] = useState(Number(savedSkip) || 0);
-    const itemsPerPage = 12;
+    const itemsPerPage = 9;
     const apiUrlWithParams = createUrlWithParams("https://dummyjson.com/products", {skip: skip.toString(), limit: `${itemsPerPage}`});
     const {status, data} = useFetch<IResponseProducts>(
         apiUrlWithParams
